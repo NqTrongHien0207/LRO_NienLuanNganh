@@ -1,0 +1,55 @@
+<div
+                  class={`text-left w-[800px] flex rounded-md space-x-2 mb-1  border-l py-2 border-[#]
+                          `}
+                >
+                  <div class="block">
+                    <div class=" w-full  px-2 pb-2">
+                      <div class="font-medium flex">
+                        <div class="flex justify-center items-center">
+                          <img
+                            class="h-4 w-4 md:h-6 md:w-6 shadow-lg rounded-full mr-1"
+                            src={userPhotoURL}
+                          />
+                          <span
+                            className={`md:text-xl text-md text-blue-400 ${
+                              uid === user.userId ? "" : ""
+                            }`}
+                          >
+                            {userName}
+                          </span>
+                          {/* <span className="text-sm">{createdAt}</span> */}
+                          <span className={`ml-4`}>
+                            {uid === user.userId && (
+                              <span
+                                className="md:text-2xl bg-white text-lg text-pink-400"
+                                style={{ cursor: "pointer" }}
+                                onClick={() =>
+                                  handleDeleteComment({
+                                    commentId,
+                                    uid,
+                                    comment,
+                                    userName,
+                                    createdAt,
+                                    userPhotoURL,
+                                  })
+                                }
+                              >
+                                <MdOutlineDeleteForever />
+                              </span>
+                            )}
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class={` p-2 shadow-lg rounded-lg  ${
+                          uid === user.userId ? "bg-[#fbe3e3]" : "bg-[#c9d4f5]"
+                        }`}
+                      >
+                        <span className="text-green-700 text-sm md:text-md">
+                          {" "}
+                          {comment.substring(0, 5000)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
