@@ -1,8 +1,0 @@
-/server/node_modules
-/client/node_modules/
-/admin/node_modules/
-
-# build
-/admin/build/
-/client/build/
-/server/build/
